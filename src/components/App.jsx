@@ -1,7 +1,6 @@
 import React from 'react';
 import { Searchbar } from './Searchbar/Searchbar';
 import { ImageGallery } from './ImageGallery/ImageGallery';
-import { ImageGalleryItem } from './ImageGalleryItem/ImageGalleryItem';
 import { getPhotos } from 'Services/Services';
 import { Button } from './Button/Button';
 import { Loader } from './Loader/Loader';
@@ -9,7 +8,7 @@ import { Loader } from './Loader/Loader';
 export class App extends React.Component {
   state = {
     imagesData: [],
-    userInput: 'strawberry',
+    userInput: 'sakura',
     page: 1,
     loader: false,
   };
@@ -47,12 +46,16 @@ export class App extends React.Component {
   handleLoadMore = () => {
     this.setState(prevState => ({ page: prevState.page + 1 }));
   };
+  onSubmit = event => {
+    event.preventDefault();
+    const inputResult = event.currentTarget.elements.input.value;
+    this.setState({ userInput: inputResult, page: 1, imagesData: [] });
+  };
   render() {
     return (
       <div>
-        <Searchbar />
+        <Searchbar onSubmit={this.onSubmit} />
         <ImageGallery imagesData={this.state.imagesData} />
-        <ImageGalleryItem />
         <Button updatePage={this.handleLoadMore} />
         {this.state.loader === true ? <Loader /> : null}
       </div>

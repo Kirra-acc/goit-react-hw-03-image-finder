@@ -1,6 +1,6 @@
 import React from 'react';
 import { Hearts } from 'react-loader-spinner';
-import s from './Loader.module.css'
+import s from './Loader.module.css';
 
 export const Loader = () => {
   return (

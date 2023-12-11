@@ -10,7 +10,7 @@ export const ImageGalleryItem = ({
   return (
     <>
       <li className={s.galleryItem}>
-        <img src={webformatURL} alt="photo" id={id} />
+        <img src={webformatURL} alt="chosen" id={id} />
       </li>
     </>
   );
