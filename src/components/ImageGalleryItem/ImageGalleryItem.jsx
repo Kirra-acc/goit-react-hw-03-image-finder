@@ -10,7 +10,12 @@ export const ImageGalleryItem = ({
   return (
     <>
       <li className={s.galleryItem}>
-        <img src={webformatURL} alt="chosen" id={id} />
+        <img
+          src={webformatURL}
+          alt="chosen"
+          id={id}
+          onClick={() => openModal(largeImageURL)}
+        />
       </li>
     </>
   );
