@@ -56,7 +56,7 @@ export class App extends React.Component {
       <div>
         <Searchbar onSubmit={this.onSubmit} />
         <ImageGallery imagesData={this.state.imagesData} />
-        <Button updatePage={this.handleLoadMore} />
+        {this.state.imagesData.length !== 0 ? <Button updatePage={this.handleLoadMore} /> : null }
         {this.state.loader === true ? <Loader /> : null}
       </div>
     );
