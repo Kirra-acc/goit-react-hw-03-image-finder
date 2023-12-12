@@ -1,15 +1,14 @@
 import React from 'react';
 import s from './Searchbar.module.css';
+import { MdOutlineSavedSearch } from 'react-icons/md';
 
-export const Searchbar = ({
-    onSubmit
-}) => {
+export const Searchbar = ({ onSubmit }) => {
   return (
     <>
       <header className={s.searchbar}>
         <form className={s.form} onSubmit={onSubmit}>
           <button type="submit" className={s.button}>
-            <span className={s.buttonLabel}>Search</span>
+            <MdOutlineSavedSearch size={35} />
           </button>
 
           <input

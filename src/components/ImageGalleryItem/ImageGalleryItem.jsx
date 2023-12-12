@@ -11,6 +11,7 @@ export const ImageGalleryItem = ({
     <>
       <li className={s.galleryItem}>
         <img
+          className={s.galleryImg}
           src={webformatURL}
           alt="chosen"
           id={id}
